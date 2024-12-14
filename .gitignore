@@ -1,6 +1,9 @@
 # Visual Studio 2015 user specific files
 .vs/
 
+# Rider
+.idea/
+
 # Compiled Object files
 *.slo
 *.lo
@@ -74,3 +77,4 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 
 Plugins/Developer/RiderLink/
+Plugins/GameLiftPlugin/
