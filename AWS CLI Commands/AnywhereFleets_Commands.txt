@@ -1,0 +1,26 @@
+0. Set profile for command prompt session
+aws sso login --profile edward
+
+set AWS_PROFILE=edward
+
+1. Register your device as a compute resource
+aws gamelift register-compute --compute-name DesktopPC --fleet-id fleet-1f3f0aa7-1356-4f19-ada6-5ffc896d7c29 --ip-address 192.168.2.5 --location custom-home-desktop
+
+2. Get your auth token for your PC
+aws gamelift get-compute-auth-token --fleet-id fleet-1f3f0aa7-1356-4f19-ada6-5ffc896d7c29 --compute-name DesktopPC
+
+3. Run the game .exe from the command line
+"G:\repositories\UE4 Projects\sky\Build\Build_1\WindowsServer\Sky\Binaries\Win64\SkyServer.exe" ^
+ -log -authtoken=<> -hostid=DesktopPC -fleetid=fleet-1f3f0aa7-1356-4f19-ada6-5ffc896d7c29 ^
+ -websocketurl=wss://eu-central-1.api.amazongamelift.com -port=7777
+ 
+4. Create Game Session
+aws gamelift create-game-session --fleet-id fleet-1f3f0aa7-1356-4f19-ada6-5ffc896d7c29 --name ^
+ DebugGameSession --maximum-player-session-count 4 --location custom-home-desktop
+ 
+5. Create Player Session
+aws gamelift create-player-session --game-session-id <> --player-id <>
+
+6. Upload Build
+aws gamelift upload-build --name SkyServerBuild --operating-system WINDOWS_2016 --server-sdk-version "5.1.3" ^
+ --build-root "G:\repositories\UE4 Projects\sky\Build\Build_1\WindowsServer" --build-version 1.0.0 --region eu-central-1

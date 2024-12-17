@@ -1,4 +1,4 @@
-# Visual Studio 2015 user specific files
+# Visual Studio
 .vs/
 
 # Rider
@@ -18,6 +18,7 @@
 *.so
 *.dylib
 *.dll
+!OpenSSLBinaries/*
 
 # Fortran module files
 *.mod

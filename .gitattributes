@@ -15,3 +15,4 @@
 
 # Anything in `/RawContent` dir.
 /RawContent/**/* filter=lfs diff=lfs merge=lfs -text
+/OpenSSLBinaries/* filter=lfs diff=lfs merge=lfs -text
