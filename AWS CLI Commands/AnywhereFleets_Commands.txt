@@ -15,8 +15,8 @@ aws gamelift get-compute-auth-token --fleet-id fleet-1f3f0aa7-1356-4f19-ada6-5ff
  -websocketurl=wss://eu-central-1.api.amazongamelift.com -port=7777
  
 4. Create Game Session
-aws gamelift create-game-session --fleet-id fleet-1f3f0aa7-1356-4f19-ada6-5ffc896d7c29 --name ^
- DebugGameSession --maximum-player-session-count 4 --location custom-home-desktop
+aws gamelift create-game-session --fleet-id fleet-9129a315-8081-4ccc-8a86-390403ea7b46 --name ^
+ GameLiftHostedSession --maximum-player-session-count 4 --location custom-home-desktop
  
 5. Create Player Session
 aws gamelift create-player-session --game-session-id <> --player-id <>

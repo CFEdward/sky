@@ -3,17 +3,19 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameMode.h"
+#include "Game/DS_GameMode.h"
 #include "ShooterGameModeBase.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class SKY_API AShooterGameModeBase : public AGameMode
+class SKY_API AShooterGameModeBase : public ADS_GameMode
 {
 	GENERATED_BODY()
+	
 public:
+	
 	AShooterGameModeBase();
 	virtual void Tick(float DeltaTime) override;
 	virtual void StartPlayerElimination(float ElimTime, ACharacter* ElimmedCharacter, class APlayerController* VictimController, APlayerController* AttackerController);
